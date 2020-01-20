@@ -1,11 +1,11 @@
-import os, requests
+import os, requests, sys
 from pathlib import Path
 from dotenv import load_dotenv
-from utils import print_center
+from utils import print_center, print_loop
 
 # .env reader
 env_file = '.env'
-env_path = Path('/Users/fastory/dashboardPython') / env_file
+env_path = Path('.') / env_file
 load_dotenv(dotenv_path=env_path)
 
 # Colors
@@ -53,3 +53,7 @@ def print_weather():
   print_center(temp)
   print_center(max_min)
   print_center(description)
+  print(eoc)
+
+if sys.argv[0] == __file__:
+  print_loop(print_weather)

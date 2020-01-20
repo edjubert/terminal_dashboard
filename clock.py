@@ -1,5 +1,6 @@
+import sys
 from datetime import datetime
-from utils import print_center
+from utils import print_center, print_loop
 
 # Colors
 light_green = "\033[92m"
@@ -22,3 +23,7 @@ def print_date():
   print_center(hour)
   print(eoc + yellow)
   print_center(date)
+  print(eoc)
+
+if sys.argv[0] == __file__:
+  print_loop(print_date)

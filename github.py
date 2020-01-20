@@ -1,6 +1,7 @@
 #!/usr/local/bin/python3
 import os
 import requests
+import sys
 from pathlib import Path
 from dotenv import load_dotenv
 from utils import print_center, print_loop
@@ -49,12 +50,13 @@ def print_github():
     if notification['reason'] == 'mention':
         mention.update(to_update)
   print(red)
-  print('Github notifications: ' + str(len(github)))
-  print('- review_requested: ' + str(len(review_requested)))
-  print('- author: ' + str(len(author)))
-  print('- assigned: ' + str(len(assigned)))
-  print('- mention: ' + str(len(mention)))
-  print('- subscribed: ' + str(len(subscribed)))
+  print('\rGithub notifications: ' + str(len(github)))
+  print('\r- review_requested: ' + str(len(review_requested)))
+  print('\r- author: ' + str(len(author)))
+  print('\r- assigned: ' + str(len(assigned)))
+  print('\r- mention: ' + str(len(mention)))
+  print('\r- subscribed: ' + str(len(subscribed)))
   print(eoc)
 
-print_loop(print_github)
+if sys.argv[0] == __file__:
+  print_loop(print_github)

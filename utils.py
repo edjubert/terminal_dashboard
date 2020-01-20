@@ -11,8 +11,8 @@ def print_center(to_print, padding = 10):
   print(to_print.center(width + padding))
 
 def print_loop(f):
-  os.system('clear')
   while True:
+    os.system('clear')
     f()
     time.sleep(30)
 
