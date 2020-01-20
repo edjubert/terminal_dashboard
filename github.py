@@ -3,11 +3,11 @@ import os
 import requests
 from pathlib import Path
 from dotenv import load_dotenv
-from utils import print_center
+from utils import print_center, print_loop
 
 # .env reader
 env_file = '.env'
-env_path = Path('/Users/fastory/dashboardPython') / env_file
+env_path = Path('.') / env_file
 load_dotenv(dotenv_path=env_path)
 
 # Colors
@@ -32,6 +32,8 @@ def print_github():
   review_requested = {}
   subscribed = {}
   author = {}
+  assigned = {}
+  mention = {}
   for notification in github:
     id = notification['id']
     title = notification['subject']['title']
@@ -42,8 +44,17 @@ def print_github():
         subscribed.update(to_update)
     if notification['reason'] == 'author':
         author.update(to_update)
+    if notification['reason'] == 'assigned':
+        assigned.update(to_update)
+    if notification['reason'] == 'mention':
+        mention.update(to_update)
   print(red)
   print('Github notifications: ' + str(len(github)))
   print('- review_requested: ' + str(len(review_requested)))
-  print('- Subscribed: ' + str(len(subscribed)))
   print('- author: ' + str(len(author)))
+  print('- assigned: ' + str(len(assigned)))
+  print('- mention: ' + str(len(mention)))
+  print('- subscribed: ' + str(len(subscribed)))
+  print(eoc)
+
+print_loop(print_github)
