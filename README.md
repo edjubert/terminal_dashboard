@@ -12,7 +12,7 @@ You will not be able to use `github.py` nor `dashboard.py` without **GITHUB_TOKE
 The default **OPEN_WEATHER_MAP_VERSION** is set to `2.5`
 
 You need to create a `.env` file and format it as follow
-```.env
+```bash
 OPEN_WEATHER_MAP_API_KEY=<OWM_API_KEY>
 OPEN_WEATHER_MAP_VERSION=<OPEN_WEATHER_MAP_VERSION>
 OPEN_WEATHER_MAP_CITY=<CITY_NAME>
@@ -24,19 +24,19 @@ GITHUB_TOKEN=<GITHUB_TOKEN>
 ## Install and run
 The dashboard uses `Pillow`, `requests` and `python-dotenv` packages.
 To install these packages, you need to run first:
-```python
+```bash
 pip3 -r requirements.txt
 ```
 
 Once all packages are installed, you can run the dashboard as follow:
-```python
+```bash
 cd <PATH_TO_THE_DASHBOARD>
 python3 dashboard.py
 ```
 
 You can also run each part independently.
 For example, to run the clock:
-```python
+```bash
 python3 clock.py
 ```
 
