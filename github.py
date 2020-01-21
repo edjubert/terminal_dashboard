@@ -45,7 +45,7 @@ def print_github():
         subscribed.update(to_update)
     if notification['reason'] == 'author':
         author.update(to_update)
-    if notification['reason'] == 'assigned':
+    if notification['reason'] == 'assign':
         assigned.update(to_update)
     if notification['reason'] == 'mention':
         mention.update(to_update)

@@ -6,12 +6,13 @@ from utils import print_center, print_padding, print_loop
 
 eoc = "\033[0m"
 
+
 def print_dashboard():
-  print_padding()
-  print_date()
-  print_weather()
-  print_github()
-  print_padding()
-  print(eoc)
-  
+    print_padding()
+    print_date()
+    print_weather()
+    print_github()
+    print(eoc)
+
+
 print_loop(print_dashboard)
