@@ -25,7 +25,7 @@ GITHUB_TOKEN=<GITHUB_TOKEN>
 The dashboard uses `Pillow`, `requests` and `python-dotenv` packages.
 To install these packages, you need to run first:
 ```bash
-pip3 -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 Once all packages are installed, you can run the dashboard as follow:
