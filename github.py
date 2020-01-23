@@ -26,7 +26,7 @@ github_token = os.getenv('GITHUB_TOKEN')
 
 # Default values
 review_requested_number = 0
-mention = 0
+mention_number = 0
 
 
 def get_github_data():
@@ -37,6 +37,8 @@ def get_github_data():
 
 
 def send_notifications(review_requested, mention):
+    global review_requested_number
+    global mention_number
     if review_requested > review_requested_number:
         review_requested_number = review_requested
         pync.notify('You have been requested for a review',
