@@ -42,10 +42,10 @@ def send_notifications(review_requested, mention):
     if review_requested > review_requested_number:
         review_requested_number = review_requested
         pync.notify('You have been requested for a review',
-                    title='Review Requested')
+                    title='Review Requested', open="https://github.com/notifications/beta?custom_inbox=true&query=reason%3Areview-requested")
     if mention > mention_number:
         mention_number = mention
-        pync.notify('You have been mentionned', title="Mention")
+        pync.notify('You have been mentionned', title="Mention", open="https://github.com/notifications/beta?custom_inbox=true&query=reason%3Amention")
 
 
 def print_github():
